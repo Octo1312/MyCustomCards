@@ -1,13 +1,15 @@
+@use "../abstracts/variable" as v;
+@use "../abstracts/mixin" as m;
 
 body {
     #museum {
         min-height: 60vh;
-        background-color: #232C33;
+        background-color: v.$blue;
         padding-top: 2rem;
         padding-bottom: 2rem;
         h1 {
             text-align: center;
-            color: #F4F1DE;
+            color: v.$white;
             font-size: 2rem;
         }
 

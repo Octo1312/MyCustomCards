@@ -1,16 +1,16 @@
-@use "../abstracts/variable" as variable;
-@use "../abstracts/mixin" as mix;
+@use "../abstracts/variable" as v;
+@use "../abstracts/mixin" as m;
 
 #loginpage {
-    background-color: #232C33;
+    background-color: v.$blue;
     padding-bottom: 4rem;
     padding-top: 4rem;
 
     .container {
-        @include mix.container;
+        @include m.container;
 
         .container-form {
-            background-color: #F4F1DE;
+            background-color: v.$white;
             padding-top: 3rem;
             padding-bottom: 3rem;
             border-radius: 2rem;
@@ -23,7 +23,7 @@
                 label {
                     font-size: 1.5rem;
                     display: block;
-                    color: #823038;
+                    color: v.$red;
                 }
 
                 input {
@@ -32,13 +32,13 @@
                     border-radius: 1rem;
                     border: none;
                     padding: 1rem;
-                    color: #823038;
+                    color: v.$red;
                 }
 
                 button {
                     
-                    background-color: #232C33;
-                    color: #F4F1DE;
+                    background-color: v.$blue;
+                    color: v.$white;
                     width: 30%;
                     border-radius: 1rem;
                     padding: 1rem;
@@ -57,8 +57,8 @@
                         display: block;
                         width: 30%;
                         text-align: center;
-                        background-color: #232C33;
-                        color: #F4F1DE;
+                        background-color: v.$blue;
+                        color: v.$white;
                         border-radius: 1rem;
                         padding: 1rem;
                         border: none;

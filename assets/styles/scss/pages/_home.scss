@@ -1,5 +1,5 @@
-@use "../abstracts/variable" as variable;
-@use "../abstracts/mixin" as mix;
+@use "../abstracts/variable" as v;
+@use "../abstracts/mixin" as m;
 
 body {
     min-height: 60vh;
@@ -20,10 +20,10 @@ body {
         z-index: 1;
     }
         .banner_container {
-            @include mix.container;
+            @include m.container;
             
             h1 {
-                color: #232C33;
+                color: v.$blue;
                 font-size: 6rem;
                 text-align: center;
                 position: relative;
@@ -34,14 +34,14 @@ body {
     }
 
     #display {
-        background-color: #232C33;
+        background-color: v.$blue;
         padding-top: 2rem;
         padding-bottom: 2rem;
 
         .container {
             h2 {
                 text-align: center;
-                color: #F4F1DE;
+                color: v.$white;
                 font-size: 2rem;
             }
         }

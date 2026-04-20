@@ -31,14 +31,13 @@
         {% block body %}{% endblock %}
     </body>
     <footer>
-        <nav class="nav-desktop">
-                <ul>
-                    <li><a href="{{path('home')}}">Accueil</svg></a></li>
-                    <li><a href="{{path('museum')}}">Découvrir</a></li>
-                </ul>
-                <div class="nav-img">
+        <div id="foot">
+                <div class="footleft">
+                    <p> MyCustomCards tout droits réservés. Copyright &copy;. <p>
+                </div>
+                <div class="footright">
                     <img src="{{ asset('asset/img/logo.png')}}" alt="Logo">
                 </div>
-            </nav>
+        </div>
     </footer>
 </html>

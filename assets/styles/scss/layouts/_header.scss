@@ -1,9 +1,9 @@
-@use "../abstracts/variable" as variable;
+@use "../abstracts/variable" as v;
 
 body {
     header {
         .nav-desktop {
-            background-color: #823038;
+            background-color: v.$red;
             height: 20vh;
             display: flex;
             justify-content: space-evenly;
@@ -27,7 +27,7 @@ body {
                 li {
                     a {
                         position: relative;
-                        font-family: variable.$font-title;
+                        font-family: v.$font-title;
                         color: #F4F1DE;
                         text-shadow: #232C33 1px 1px 4px;
                         font-size: 1.5rem;
@@ -41,7 +41,7 @@ body {
                             width: 0;
                             height: 2px;
                             bottom: -5px;
-                            background: #232C33;
+                            background: v.$blue;
                             transition: width 0.3s;
                             box-shadow: #F5D7E3 1px 1px 4px;
                         }

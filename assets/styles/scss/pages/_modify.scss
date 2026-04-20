@@ -1,24 +1,24 @@
-@use "../abstracts/variable" as variable;
-@use "../abstracts/mixin" as mix;
+@use "../abstracts/variable" as v;
+@use "../abstracts/mixin" as m;
 
 body {
     #modify {
-        background-color: #232C33;
+        background-color: v.$blue;
         text-align: center;
         padding-top: 2rem;
         h1 {
-            color: #F4F1DE;
+            color: v.$white;
             font-size: 2rem;
         }
 
         .container {
-            @include mix.container;
+            @include m.container;
             text-align: center;
             padding-top: 2rem;
             padding-bottom: 2rem;
 
             label {
-                color: #F4F1DE;
+                color: v.$white;
                 display: block;
                 font-size: 2rem;
                 padding-bottom: 2rem;
@@ -26,7 +26,7 @@ body {
             }
 
             input, textarea, select {
-                color: #823038;
+                color: v.$red;
                 font-size: 1.5rem;
                 padding: 1rem;
                 border-radius: 1rem;
@@ -34,10 +34,10 @@ body {
 
             button {
                 margin-top: 1rem;
-                border: 1px solid #823038;
-                background-color: #823038;
+                border: 1px solid v.$red;
+                background-color: v.$red;
                 border-radius: 1rem;
-                color: #F4F1DE;
+                color: v.$white;
                 font-size: 1.2rem;
                 padding: 1rem;
                 text-decoration: none;

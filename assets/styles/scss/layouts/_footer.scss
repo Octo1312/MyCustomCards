@@ -1,57 +1,31 @@
-@use "../abstracts/variable" as variable;
-@use "../abstracts/mixin" as mix;
+@use "../abstracts/variable" as v;
+@use "../abstracts/mixin" as m;
 
 footer {
     
-    .nav-desktop {
-            background-color: #823038;
-            height: 20vh;
+    #foot {
+        background-color: v.$red;
+        height: 20vh;
+        display: flex;
+        justify-content: space-evenly;
+
+        .footleft {
             display: flex;
-            justify-content: space-evenly;
-
-            .nav-img {
-                display: flex;
-
-                img {
-                    padding: 1rem;
-                }
+            align-items: center;
+            p {
+                font-family: v.$font-body;
+                color: v.$blue;
+                font-size: 2rem   
             }
+                
+        }
 
-            ul {
-                height: 100%;
-                display: flex;
-                gap: 5rem;
-                list-style-type: none;
-                justify-content: center;
-                align-items: center;
+        .footright {
+            display: flex;
 
-                li {
-                    a {
-                        position: relative;
-                        font-family: variable.$font-title;
-                        color: #F4F1DE;
-                        text-shadow: #232C33 1px 1px 4px;
-                        font-size: 1.5rem;
-                        display: inline-block;
-                        text-decoration: none;
-
-                        &::before {
-                            position: absolute;
-                            content: '';
-                            display: block;
-                            width: 0;
-                            height: 2px;
-                            bottom: -5px;
-                            background: #232C33;
-                            transition: width 0.3s;
-                            box-shadow: #F5D7E3 1px 1px 4px;
-                        }
-                    }
-                    
-                    &:hover a::before {
-                        width: 100%;
-                    }
-                }
+            img {
+                padding: 1rem;
             }
+        }
     }
 }
