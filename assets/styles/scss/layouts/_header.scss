@@ -4,7 +4,7 @@ body {
     header {
         .nav-desktop {
             background-color: v.$red;
-            height: 20vh;
+            height: 15vh;
             display: flex;
             justify-content: space-evenly;
 
@@ -18,7 +18,7 @@ body {
 
             ul {
                 height: 100%;
-                display: flex;
+                display: flex; 
                 gap: 5rem;
                 list-style-type: none;
                 justify-content: center;
