@@ -14,7 +14,6 @@ final class HomeController extends AbstractController
     {
 
         $card = $cardRepository->findThree();
-        dd($card);
         return $this->render('home/home.html.twig', [
             "cards" => $card,
         ]);
