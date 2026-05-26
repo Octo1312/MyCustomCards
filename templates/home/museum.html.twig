@@ -3,6 +3,9 @@
 {% block title %} MyCustomCard - Galerie {% endblock %}
 
 {% block body %}
+<section class="toTop">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+</section>
 <section id="museum">
     <h1>Toutes les créations</h1>
     <div class="container">
@@ -22,7 +25,7 @@
                 <h3>{{ card.name }}</h3>
             </div>
             <div class="card-effect">
-                <p>{{ card.effect }}</p>
+                <p class=" {% if card.color.id > 7 %} effect {% endif %}">{{ card.effect }}</p>
             </div>
             <div class="card-power">
                 <p>{{ card.strength }}/ </p>

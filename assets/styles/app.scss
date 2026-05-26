@@ -7,6 +7,9 @@
 @use "scss/base/normalize";
 @use "scss/base/reset";
 
+// Components
+@use "scss/components/toTop";
+
 // Layout
 @use "scss/layouts/body";
 @use "scss/layouts/footer";

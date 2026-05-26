@@ -64,6 +64,9 @@
             text-align: left;
             top: 350px;
             left: 19px;
+            color: v.$black;
+        }
+        .effect {
             color: v.$white;
         }
     }
@@ -73,9 +76,9 @@
         display: flex;
         position: absolute;
         top: 471px;
-        left: 274px;
+        left: 278px;
         p {
-            color: v.$white;
+            color: v.$black;
             font-size: 1.5rem;
         }
     }
