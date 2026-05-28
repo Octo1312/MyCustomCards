@@ -12,33 +12,41 @@
 <section id="display">
     <div class="container">
         <h2>Les dernières créations</h2>
-        <div class="cards container">
-            {% for card in cards %}
-            <div class="card">
-            <div class="card-frame">
-                <img src="{{ asset('asset/img/' ~ card.color.frame) }}" alt="Frame card">
+        <div class="carousel-wrapper">
+            <button class="carousel-btn" id="prevBtn" aria-label="Précédent">&#8592;</button>
+            <div class="carousel-viewport">
+                <div class="cards carousel-track" id="carouselTrack">
+                    {% for card in cards %}
+                    <div class="carousel-slide">
+                        <div class="card">
+                            <div class="card-frame">
+                                <img src="{{ asset('asset/img/' ~ card.color.frame) }}" alt="Frame card">
+                            </div>
+                            <div class="card-stats">
+                                <img src="{{ asset('asset/img/' ~ card.color.stats) }}" alt="stats card">
+                            </div>
+                            <div class="card-img">
+                                <img src="{{ asset('asset/uploads/images/' ~ card.imageName) }}" alt="Img card">
+                            </div>
+                            <div class="card-title">
+                                <h3>{{ card.name }}</h3>
+                            </div>
+                            <div class="card-effect">
+                                <p class="{% if card.color.id > 7 %}effect{% endif %}">{{ card.effect }}</p>
+                            </div>
+                            <div class="card-power">
+                                <p>{{ card.strength }}/</p>
+                                <p>{{ card.toughness }}</p>
+                            </div>
+                            <div class="card-details">
+                                <a href="{{ path('detailscard', {'id': card.id}) }}">Plus d'informations ici</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            <div class="card-stats">
-                <img src="{{ asset('asset/img/' ~ card.color.stats) }}" alt="stats card">
-            </div>
-            <div class="card-img">
-                <img src="{{ asset('asset/uploads/images/' ~ card.imageName) }}" alt="Img card">
-            </div>
-            <div class="card-title">        
-                <h3>{{ card.name }}</h3>
-            </div>
-            <div class="card-effect">
-                <p class=" {% if card.color.id > 7 %} effect {% endif %}">{{ card.effect }}</p>
-            </div>
-            <div class="card-power">
-                <p>{{ card.strength }}/ </p>
-                <p>{{ card.toughness }}</p>
-            </div>
-            <div class="card-details">
-                <a href="{{path('detailscard',{'id' : card.id})}}">Plus d'informations ici</a>
-            </div>
-            </div>
-            {% endfor %}    
+            <button class="carousel-btn" id="nextBtn" aria-label="Suivant">&#8594;</button>
         </div>
     </div>
 </section>

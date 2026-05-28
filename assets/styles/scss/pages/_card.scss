@@ -1,104 +1,119 @@
 @use "../abstracts/variable" as v;
 @use "../abstracts/mixin" as m;
+
 .cards {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     justify-content: space-evenly;
 
+    // Overrides quand .cards est utilisÃ© comme carousel
+    &.carousel-track {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        transition: transform 0.4s ease;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+    }
+
     .card {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 350px;
-    z-index: 0;
-    
-    .card-img {
-        width: 100%;
-        height: 273px;
-        position: absolute;
-        img {
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            object-position: top;
-            object-fit: cover;
-        }
-    }
-
-    .card-frame {
-        z-index: 2;
-        img {
-            width: 350px;
-        }
-    }
-
-    .card-stats {
-        z-index: 3;
-        img {
-            position: absolute;
-            height: 60px;
-            top: 457px;
-            left: 234px;
-        }
-    }
-
-    .card-title {
-        z-index: 3;
-        h3 {
-            position: absolute;
-            font-size: 1.5rem;
-            top: 55px;
-            left: 29px;
-        }
-    }
-
-    .card-effect {
-        z-index: 5;
-        p {
-            padding-left: 1rem;
-            padding-right: 2rem;
-            position: absolute;
-            font-size: 1rem;
-            text-align: left;
-            top: 350px;
-            left: 19px;
-            color: v.$black;
-        }
-        .effect {
-            color: v.$white;
-        }
-    }
-
-    .card-power {
-        z-index: 6;
+        padding-top: 2rem;
         display: flex;
-        position: absolute;
-        top: 471px;
-        left: 278px;
-        p {
-            color: v.$black;
-            font-size: 1.5rem;
-        }
-    }
+        flex-direction: column;
+        position: relative;
+        width: 350px;
+        z-index: 0;
 
-    .card-details {
-        padding: 2rem;
-        display: flex;
-        justify-content: left;
-        text-align: center;
-        a {
-            border: 1px solid v.$red;
-            background-color: v.$red;
-            border-radius: 1rem;
-            color: v.$white;
-            font-size: 1.2rem;
-            padding: 1rem;
-            text-decoration: none;
-            position: relative;
+        .card-img {
             width: 100%;
+            height: 273px;
+            position: absolute;
+            img {
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                object-position: top;
+                object-fit: cover;
+            }
+        }
+
+        .card-frame {
+            z-index: 2;
+            img {
+                width: 350px;
+            }
+        }
+
+        .card-stats {
+            z-index: 3;
+            img {
+                position: absolute;
+                height: 60px;
+                top: 457px;
+                left: 234px;
+            }
+        }
+
+        .card-title {
+            z-index: 3;
+            h3 {
+                position: absolute;
+                font-size: 1.5rem;
+                top: 55px;
+                left: 29px;
+            }
+        }
+
+        .card-effect {
+            z-index: 5;
+            p {
+                padding-left: 1rem;
+                padding-right: 2rem;
+                position: absolute;
+                font-size: 1rem;
+                text-align: left;
+                top: 350px;
+                left: 19px;
+                color: v.$black;
+            }
+            .effect {
+                color: v.$white;
+            }
+        }
+
+        .card-power {
+            z-index: 6;
+            display: flex;
+            position: absolute;
+            top: 471px;
+            left: 278px;
+            p {
+                color: v.$black;
+                font-size: 1.5rem;
+            }
+        }
+
+        .card-details {
+            padding: 2rem;
+            display: flex;
+            justify-content: left;
+            text-align: center;
+            a {
+                border: 1px solid v.$red;
+                background-color: v.$red;
+                border-radius: 1rem;
+                color: v.$white;
+                font-size: 1.2rem;
+                padding: 1rem;
+                text-decoration: none;
+                position: relative;
+                width: 100%;
+            }
         }
     }
-}
 }
