@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {{ encore_entry_link_tags('app') }}
         {% block javascripts %}
@@ -12,36 +13,43 @@
     <body>
     {% block header %}
         <header>
-            <nav class="nav-desktop">
-                <div class="nav-img">
-                    <img src="{{ asset('asset/img/logo.png')}}" alt="Logo">
+            <nav class="navbar">
+                <div class="navbar__logo">
+                    <a href="{{ path('home') }}">
+                        <img src="{{ asset('asset/img/logo.png') }}" alt="Logo">
+                    </a>
                 </div>
-                <ul>
-                    <li><a href="{{path('home')}}">Accueil</svg></a></li>
-                    <li><a href="{{path('museum')}}">Découvrir</a></li>
-                    {% if is_granted('ROLE_USER')%}
-                    <li><a href="{{path('addcard')}}">Créer une carte</a></li>
-                    {% endif %}
-                    {% if is_granted('ROLE_USER') == false %}
-                        <li><a href="{{path('login')}}">Connexion</a></li>
-                    {% endif %}
+
+                <button class="navbar__burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+                    <span class="navbar__burger-bar"></span>
+                    <span class="navbar__burger-bar"></span>
+                    <span class="navbar__burger-bar"></span>
+                </button>
+
+                <ul class="navbar__menu" id="navMenu">
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li><a href="{{ path('museum') }}">Découvrir</a></li>
                     {% if is_granted('ROLE_USER') %}
-                        <li><a href="{{path('logout')}}">Déconnexion</a></li>
+                        <li><a href="{{ path('addcard') }}">Créer une carte</a></li>
+                        <li><a href="{{ path('logout') }}">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="{{ path('login') }}">Connexion</a></li>
                     {% endif %}
                 </ul>
             </nav>
         </header>
-        {% endblock %}
-        {% block body %}{% endblock %}
+    {% endblock %}
+
+    {% block body %}{% endblock %}
     </body>
     <footer>
         <div id="foot">
-                <div class="footleft">
-                    <p> MyCustomCards tout droits réservés. Copyright &copy;. <p>
-                </div>
-                <div class="footright">
-                    <img src="{{ asset('asset/img/logo.png')}}" alt="Logo">
-                </div>
+            <div class="footleft">
+                <p>MyCustomCards tout droits réservés. Copyright &copy;</p>
+            </div>
+            <div class="footright">
+                <img src="{{ asset('asset/img/logo.png') }}" alt="Logo">
+            </div>
         </div>
     </footer>
 </html>
