@@ -2,6 +2,7 @@
 @use "../abstracts/mixin" as m;
 
 body {
+    
     #modify {
         background-color: v.$blue;
         text-align: center;

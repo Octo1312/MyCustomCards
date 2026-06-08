@@ -2,6 +2,7 @@
 @use "../abstracts/mixin" as m;
 
 body {
+    
     #creation {
         background-color: v.$blue;
         min-height: 60vh;

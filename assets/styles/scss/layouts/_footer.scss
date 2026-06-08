@@ -5,9 +5,11 @@ footer {
     
     #foot {
         background-color: v.$red;
+        background-image: url(../../../../public/asset/img/diagmonds.png);
         height: 15vh;
         display: flex;
         justify-content: space-evenly;
+        border-top: 2px solid v.$border;
 
         .footleft {
             display: flex;
@@ -28,6 +30,7 @@ footer {
         .footright {
             display: flex;
             align-items: center;
+
             img {
                 height: 100px;
                 width: auto;
