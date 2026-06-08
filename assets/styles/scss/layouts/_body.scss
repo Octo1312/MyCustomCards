@@ -3,4 +3,9 @@
 body {
     position: relative;
     font-family: v.$font-body;
+    background-color: v.$blue;
+
+    main {
+        min-height: calc(100vh - 284px);
+    }
 }

@@ -15,7 +15,7 @@
     .container {
         @include m.container;
         background-color: v.$white;
-        border-radius: 2rem;
+        border-radius: 2px;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
@@ -32,7 +32,7 @@
         input {
             margin-bottom: 1rem;
             margin-top: 1rem;
-            border-radius: 1rem;
+            border-radius: 2px;
             border: none;
             padding: 1rem;
             color: v.$red;
@@ -42,7 +42,7 @@
             background-color: v.$blue;
             color: v.$white;
             width: 30%;
-            border-radius: 1rem;
+            border-radius: 2px;
             padding: 1rem;
             border: none;
             font-size: 1.5rem;
