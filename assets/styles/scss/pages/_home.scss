@@ -13,7 +13,7 @@ body {
         position: relative;
 
         &::before {
-            background-color: rgba(255, 255, 255, 0.303);
+            background-color: rgba(255, 255, 255, 0.552);
             content: "";
             width: 100%;
             height: 100%;
@@ -31,6 +31,12 @@ body {
                 position: relative;
                 padding-top: 10rem;
                 z-index: 2;
+            }
+
+            @media screen and (max-width: 768px) {
+                h1 {
+                    font-size: 4rem;
+                }
             }
         }
     }
@@ -66,13 +72,16 @@ body {
         }
 
         .carousel-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: v.$white;
             color: v.$blue;
             border: none;
             border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
             flex-shrink: 0;
             cursor: pointer;
             transition: background 0.2s, opacity 0.2s;
