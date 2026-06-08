@@ -7,7 +7,7 @@
     position: relative;
     justify-content: space-evenly;
 
-    // Overrides quand .cards est utilisÃ© comme carousel
+    // Overrides quand .cards est utilisé comme carousel
     &.carousel-track {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -39,6 +39,7 @@
                 z-index: 1;
                 object-position: top;
                 object-fit: cover;
+                border-radius:14px;
             }
         }
 
@@ -46,6 +47,7 @@
             z-index: 2;
             img {
                 width: 350px;
+                border-radius: 14px;
             }
         }
 
@@ -104,9 +106,9 @@
             justify-content: left;
             text-align: center;
             a {
-                border: 1px solid v.$red;
+                border: 1px solid v.$black;
                 background-color: v.$red;
-                border-radius: 1rem;
+                border-radius: 3px;
                 color: v.$white;
                 font-size: 1.2rem;
                 padding: 1rem;
