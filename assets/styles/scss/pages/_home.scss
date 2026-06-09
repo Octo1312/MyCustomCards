@@ -23,6 +23,9 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &::before {
             background-color: rgba(255, 255, 255, 0.55);
@@ -37,6 +40,10 @@ body {
             @include m.container;
             position: relative;
             z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
 
             h1 {
                 color: v.$white;
@@ -45,9 +52,15 @@ body {
                 text-align: center;
                 font-weight: 700;
                 letter-spacing: 0.01em;
-                padding-top: 10rem;
+                padding-top: 0;
                 max-width: 14ch;
                 margin: 0 auto;
+                padding: 0.7rem 0.9rem;
+                background: rgba(35, 44, 51, 0.78);
+                border: 2px solid rgba(130, 48, 56, 0.88);
+                border-radius: 14px;
+                box-shadow: 0 12px 24px rgba(35, 44, 51, 0.35);
+                text-wrap: balance;
                 text-shadow: 0 2px 0 rgba(35, 44, 51, 0.95), 0 0 14px rgba(130, 48, 56, 0.45), 0 10px 22px rgba(35, 44, 51, 0.45);
             }
         }
@@ -74,12 +87,6 @@ body {
                     line-height: 1.08;
                     padding-top: 0;
                     max-width: min(92vw, 16ch);
-                    padding: 0.7rem 0.9rem;
-                    background: rgba(35, 44, 51, 0.78);
-                    border: 2px solid rgba(130, 48, 56, 0.88);
-                    border-radius: 14px;
-                    box-shadow: 0 12px 24px rgba(35, 44, 51, 0.35);
-                    text-wrap: balance;
                 }
             }
 

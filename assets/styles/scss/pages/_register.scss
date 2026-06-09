@@ -1,12 +1,25 @@
 @use "../abstracts/variable" as v;
 @use "../abstracts/mixin" as m;
 
+body.auth-register {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex: 1;
+        display: flex;
+    }
+}
+
 #registerpage {
-    
+
     background-color: v.$blue;
     padding-bottom: 2rem;
     padding-top: 2rem;
-    height: 60vh;
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +45,7 @@
         input {
             margin-bottom: 1rem;
             margin-top: 1rem;
-            border-radius: 2px;
+            border-radius: 10px;
             border: none;
             padding: 1rem;
             color: v.$red;
@@ -42,7 +55,7 @@
             background-color: v.$blue;
             color: v.$white;
             width: 30%;
-            border-radius: 2px;
+            border-radius: 10px;
             padding: 1rem;
             border: none;
             font-size: 1.5rem;
