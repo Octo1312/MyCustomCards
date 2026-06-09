@@ -1,50 +1,74 @@
 import './styles/app.scss';
 
-// Scipt for carrousel 
-document.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('carouselTrack');
-    const cards = track.querySelectorAll('.card');
-    let index = 0;
-
-    function goTo(i) {
-        index = i;
-        const cardWidth = track.parentElement.offsetWidth;
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
+// Script for carrousel 
+document.addEventListener('DOMContentLoaded', function () {
+  var track = document.getElementById('carouselTrack');
+  if (!track) return;
+  var viewport = track.closest('.carousel-viewport');
+  if (!viewport) return;
+  var slides = track.querySelectorAll('.carousel-slide');
+  if (slides.length === 0) return;
+  var index = 0;
+  function goTo(i) {
+    if (i < 0) {
+      index = slides.length - 1;
+    } else if (i >= slides.length) {
+      index = 0;
+    } else {
+      index = i;
     }
-
-    // Défilement auto toutes les 5 secondes 
-    let autoplay = setInterval(() => {
-        const next = index < cards.length - 1 ? index + 1 : 0;
-        goTo(next);
-    }, 5000);
-
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        clearInterval(autoplay);
-        if (index > 0) goTo(index - 1);
+    var slideWidth = viewport.clientWidth;
+    var viewportWidth = window.innerWidth;
+    var safetyInset = 0;
+    if (viewportWidth <= 360) {
+      safetyInset = 8;
+    } else if (viewportWidth <= 390) {
+      safetyInset = 12;
+    } else if (viewportWidth <= 425) {
+      safetyInset = 18;
+    }
+    var rawScale = (slideWidth - safetyInset) / 350;
+    var cardScale = viewportWidth <= 425 ? Math.max(0.68, Math.min(1, rawScale)) : 1;
+    track.style.setProperty('--card-scale', cardScale.toString());
+    track.style.transform = "translateX(-".concat(index * slideWidth, "px)");
+  }
+  window.addEventListener('resize', function () {
+    return goTo(index);
+  });
+  var autoplay = setInterval(function () {
+    goTo(index + 1);
+  }, 5000);
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      clearInterval(autoplay);
+      goTo(index - 1);
     });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        clearInterval(autoplay);
-        if (index < cards.length - 1) goTo(index + 1);
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      clearInterval(autoplay);
+      goTo(index + 1);
     });
+  }
+  goTo(0);
 });
 
 // Menu burger
-const burgerBtn = document.getElementById('burgerBtn');
-const navMenu   = document.getElementById('navMenu');
-
+var burgerBtn = document.getElementById('burgerBtn');
+var navMenu = document.getElementById('navMenu');
 if (burgerBtn && navMenu) {
-    burgerBtn.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('is-open');
-        burgerBtn.classList.toggle('is-open', isOpen);
-        burgerBtn.setAttribute('aria-expanded', isOpen);
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!burgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('is-open');
-            burgerBtn.classList.remove('is-open');
-            burgerBtn.setAttribute('aria-expanded', false);
-        }
-    });
+  burgerBtn.addEventListener('click', function () {
+    var isOpen = navMenu.classList.toggle('is-open');
+    burgerBtn.classList.toggle('is-open', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', function (e) {
+    if (!burgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.remove('is-open');
+      burgerBtn.classList.remove('is-open');
+      burgerBtn.setAttribute('aria-expanded', false);
+    }
+  });
 }
