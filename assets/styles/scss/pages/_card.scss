@@ -7,7 +7,7 @@
     position: relative;
     justify-content: space-evenly;
  
-    // Overrides quand .cards est utilisécomme carousel
+    // Overrides quand .cards est utilisÃ© comme carousel
     &.carousel-track {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -88,7 +88,13 @@
                 position: absolute;
                 font-size: 1.5rem;
                 top: 55px;
-                left: 29px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 82%;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
  
@@ -129,7 +135,7 @@
             a {
                 border: 1px solid v.$border;
                 background-color: v.$red;
-                border-radius: 10px;
+                border-radius: 3px;
                 color: v.$white;
                 font-size: 1.2rem;
                 padding: 1rem;
@@ -138,6 +144,102 @@
                 width: 100%;
                 max-width: 100%;
                 box-sizing: border-box;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            width: 300px;
+
+            .card-img {
+                height: 234px;
+            }
+
+            .card-frame img {
+                width: 300px;
+            }
+
+            .card-stats img {
+                height: 51px;
+                top: 392px;
+                left: 200px;
+            }
+
+            .card-title h3 {
+                font-size: 1.3rem;
+                top: 47px;
+                width: 82%;
+            }
+
+            .card-effect p {
+                padding-left: 0.9rem;
+                padding-right: 1.7rem;
+                font-size: 0.9rem;
+                top: 300px;
+                left: 16px;
+            }
+
+            .card-power {
+                top: 404px;
+                left: 238px;
+
+                p {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .card-details {
+                padding: 1.25rem 0;
+
+                a {
+                    font-size: 1.05rem;
+                    padding: 0.9rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            width: 270px;
+
+            .card-img {
+                height: 211px;
+            }
+
+            .card-frame img {
+                width: 270px;
+            }
+
+            .card-stats img {
+                height: 46px;
+                top: 353px;
+                left: 180px;
+            }
+
+            .card-title h3 {
+                font-size: 1.15rem;
+                top: 50px;
+                width: 82%;
+            }
+
+            .card-effect p {
+                padding-left: 0.75rem;
+                padding-right: 1.4rem;
+                font-size: 0.82rem;
+                top: 270px;
+                left: 14px;
+            }
+
+            .card-power {
+                top: 364px;
+                left: 213px;
+
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+
+            .card-details a {
+                font-size: 0.98rem;
+                padding: 0.8rem;
             }
         }
     }
