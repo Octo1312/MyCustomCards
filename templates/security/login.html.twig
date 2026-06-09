@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Connexion{% endblock %}
+{% block body_class %}auth-login{% endblock %}
 
 {% block body %}
     <section id="loginpage">
@@ -26,13 +27,10 @@
                         <label for="password">Mot de passe</label>
                         <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
                     </div>
-                    
+
                     <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
                     <div>
                         <button class="btn btn-lg btn-primary" type="submit">Se connecter</button>
-                    </div>
-                    <div class="path">
-                        <a href="{{ path('register')}}">S'inscrire</a>
                     </div>
                     </div>
                 </form>

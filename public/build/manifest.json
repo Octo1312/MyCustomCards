@@ -2,10 +2,9 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_core-js_modules_web_timers_js.js": "/build/vendors-node_modules_core-js_modules_web_timers_js.js",
+  "build/vendors-node_modules_core-js_modules_es_date_to-string_js-node_modules_core-js_modules_es_err-3e0726.js": "/build/vendors-node_modules_core-js_modules_es_date_to-string_js-node_modules_core-js_modules_es_err-3e0726.js",
   "build/images/banner.jpeg": "/build/images/banner.8af714d9.jpeg",
   "build/fonts/Roboto-Regular.ttf": "/build/fonts/Roboto-Regular.5dd91892.ttf",
   "build/fonts/OpenSans-Regular.ttf": "/build/fonts/OpenSans-Regular.b5742f85.ttf",
-  "build/images/diagmonds.png": "/build/images/diagmonds.04fbfb21.png",
-  "build/vendors-node_modules_core-js_modules_es_date_to-string_js-node_modules_core-js_modules_es_err-3e0726.js": "/build/vendors-node_modules_core-js_modules_es_date_to-string_js-node_modules_core-js_modules_es_err-3e0726.js"
+  "build/images/diagmonds.png": "/build/images/diagmonds.04fbfb21.png"
 }

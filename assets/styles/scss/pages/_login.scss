@@ -1,11 +1,25 @@
 @use "../abstracts/variable" as v;
 @use "../abstracts/mixin" as m;
 
+body.auth-login {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex: 1;
+        display: flex;
+    }
+}
+
 #loginpage {
     
     background-color: v.$blue;
     padding-bottom: 4rem;
     padding-top: 4rem;
+    flex: 1;
+    min-height: 0;
 
     .container {
         @include m.container;
@@ -30,7 +44,7 @@
                 input {
                     margin-bottom: 1rem;
                     margin-top: 1rem;
-                    border-radius: 10px;
+                    border-radius: 2px;
                     border: none;
                     padding: 1rem;
                     color: v.$red;
