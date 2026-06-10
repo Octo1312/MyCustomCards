@@ -43,9 +43,10 @@ body.auth-register {
         }
 
         input {
+            width: min(100%, 28rem);
             margin-bottom: 1rem;
             margin-top: 1rem;
-            border-radius: 10px;
+            border-radius: 2px;
             border: none;
             padding: 1rem;
             color: v.$red;
@@ -54,13 +55,44 @@ body.auth-register {
         button {
             background-color: v.$blue;
             color: v.$white;
-            width: 30%;
-            border-radius: 10px;
+            width: min(100%, 14rem);
+            border-radius: 2px;
             padding: 1rem;
             border: none;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             margin-top: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            label {
+                font-size: 1.3rem;
+            }
+
+            input,
+            button {
+                width: 100%;
+            }
+
+            button {
+                font-size: 1.25rem;
+                padding: 0.9rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            label {
+                font-size: 1.15rem;
+            }
+
+            input {
+                padding: 0.85rem;
+            }
+
+            button {
+                font-size: 1.1rem;
+                padding: 0.8rem;
+            }
         }
     }
 }

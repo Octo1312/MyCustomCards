@@ -28,6 +28,7 @@ body.auth-login {
             background-color: v.$white;
             padding-top: 3rem;
             padding-bottom: 3rem;
+            padding-inline: 1.5rem;
             border-radius: 2px;
             
 
@@ -42,6 +43,8 @@ body.auth-login {
                 }
 
                 input {
+                    width: min(100%, 28rem);
+                    box-sizing: border-box;
                     margin-bottom: 1rem;
                     margin-top: 1rem;
                     border-radius: 2px;
@@ -54,7 +57,8 @@ body.auth-login {
                     
                     background-color: v.$blue;
                     color: v.$white;
-                    width: 30%;
+                    width: min(100%, 14rem);
+                    box-sizing: border-box;
                     border-radius: 2px;
                     padding: 1rem;
                     border: none;
@@ -70,7 +74,8 @@ body.auth-login {
                     a {
                         text-decoration: none;
                         display: block;
-                        width: 30%;
+                        width: min(100%, 14rem);
+                        box-sizing: border-box;
                         text-align: center;
                         background-color: v.$blue;
                         color: v.$white;
@@ -80,6 +85,51 @@ body.auth-login {
                         font-size: 1.5rem;
                     }
                 }
+
+                @media screen and (max-width: 768px) {
+                    label {
+                        font-size: 1.3rem;
+                    }
+
+                    input {
+                        width: min(100%, 24rem);
+                    }
+
+                    button,
+                    .path a {
+                        width: min(100%, 18rem);
+                    }
+
+                    button,
+                    .path a {
+                        font-size: 1.25rem;
+                        padding: 0.9rem;
+                    }
+                }
+
+                @media screen and (max-width: 480px) {
+                    label {
+                        font-size: 1.15rem;
+                    }
+
+                    input {
+                        padding: 0.85rem;
+                    }
+
+                    button,
+                    .path a {
+                        font-size: 1.1rem;
+                        padding: 0.8rem;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                padding-inline: 1rem;
+            }
+
+            @media screen and (max-width: 480px) {
+                padding-inline: 0.85rem;
             }
         }
     }
