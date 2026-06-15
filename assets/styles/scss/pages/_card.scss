@@ -7,7 +7,7 @@
     position: relative;
     justify-content: space-evenly;
  
-    // Overrides quand .cards est utilisÃ© comme carousel
+    // Overrides quand .cards est utilisé comme carousel
     &.carousel-track {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -215,7 +215,7 @@
             }
 
             .card-title h3 {
-                font-size: 1.15rem;
+                font-size: 1.10rem;
                 top: 50px;
                 width: 82%;
             }
@@ -223,7 +223,7 @@
             .card-effect p {
                 padding-left: 0.75rem;
                 padding-right: 1.4rem;
-                font-size: 0.82rem;
+                font-size: 0.80rem;
                 top: 270px;
                 left: 14px;
             }
